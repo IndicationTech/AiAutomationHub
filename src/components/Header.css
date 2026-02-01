@@ -1,0 +1,121 @@
+/* ===============================
+   Header Styles
+================================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--bg-white);
+  transition: all var(--transition-base);
+}
+
+/* Add subtle shadow when scrolled */
+.header--scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+/* ===============================
+   Container
+================================= */
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===============================
+   Logo
+================================= */
+
+.header__logo {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.header__logo:hover {
+  color: var(--color-primary-dark);
+}
+
+.header__logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+/* ===============================
+   Navigation
+================================= */
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.header__nav-link {
+  background: none;
+  border: none;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.header__nav-link:hover {
+  color: var(--color-primary);
+}
+
+.header__nav-link--active {
+  color: var(--color-primary);
+}
+
+/* Active link underline */
+.header__nav-link--active::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* ===============================
+   Responsive
+================================= */
+
+@media (max-width: 768px) {
+  .header__container {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .header__logo {
+    font-size: var(--font-size-lg);
+  }
+
+  .header__nav {
+    gap: var(--spacing-md);
+  }
+
+  .header__nav-link {
+    font-size: var(--font-size-sm);
+  }
+
+  .header__logo img {
+    height: 32px;
+  }
+}
