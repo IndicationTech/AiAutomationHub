@@ -34,7 +34,7 @@ const ImageGenerator = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5678/webhook-test/image-generate",
+        "http://localhost:5678/webhook/image-generate",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

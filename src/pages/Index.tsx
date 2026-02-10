@@ -6,6 +6,11 @@ import BlogAgent from "@/components/BlogAgent";
 import EmailAgent from "@/components/EmailAgent";
 import ImageGenerator from "@/components/ImageGenerator";
 import VideoGenerator from "@/components/VideoGenerator";
+import Chatbot from "@/components/chatbot";
+import InstagramAgent from "@/components/InstagramAgent";
+import FacebookAgent from "@/components/FacebookAgent";
+import LinkedInPro from "@/components/LinkedInPro";
+import InstagramPro from "@/components/InstagramPro";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,12 +20,17 @@ const Index = () => {
       <main>
         <Hero />
         <div id="agents">
+          <Chatbot />
           <ImageGenerator />
           <VideoGenerator />
           <LinkedInAgent />
+          <InstagramAgent />
+          <FacebookAgent />
           <ResearchAgent />
           <BlogAgent />
           <EmailAgent />
+          <LinkedInPro />
+          <InstagramPro />
         </div>
       </main>
       <Footer />
