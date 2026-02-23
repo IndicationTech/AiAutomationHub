@@ -46,7 +46,7 @@ const FacebookAgent = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5678/webhook-test/post-to-facebook",
+        "http://localhost:5678/webhook/post-to-facebook",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -103,7 +103,7 @@ const FacebookAgent = () => {
     setIsLoading(true);
 
     const res = await fetch(
-      "http://localhost:5678/webhook-test/regenerate-facebook-text",
+      "http://localhost:5678/webhook/regenerate-facebook-text",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -119,6 +119,10 @@ const FacebookAgent = () => {
     setPreview((prev) => ({
       ...prev,
       text: payload.text || payload.output || "",
+      raw: {
+        ...prev.raw,
+        text: payload.text || payload.output || "",
+      },
     }));
 
     setIsLoading(false);
@@ -129,7 +133,7 @@ const FacebookAgent = () => {
     setIsLoading(true);
 
     const res = await fetch(
-      "http://localhost:5678/webhook-test/regenerate-facebook-image",
+      "http://localhost:5678/webhook/regenerate-facebook-image",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -139,15 +143,21 @@ const FacebookAgent = () => {
 
     const data = await res.json();
 
-    setPreview((prev) => ({ ...prev, image: data.image }));
-    setIsLoading(false);
+    setPreview((prev) => ({
+      ...prev,
+      image: data.image,
+      raw: {
+        ...prev.raw,
+        image: data.image,
+      },
+    }));
   };
 
   /* Approve & Post */
   const handleApprove = async () => {
     setIsLoading(true);
 
-    await fetch("http://localhost:5678/webhook-test/approve-to-post", {
+    await fetch("http://localhost:5678/webhook/approve-to-post", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(preview.raw),

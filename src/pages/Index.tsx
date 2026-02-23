@@ -10,6 +10,7 @@ import Chatbot from "@/components/chatbot";
 import InstagramAgent from "@/components/InstagramAgent";
 import FacebookAgent from "@/components/FacebookAgent";
 import LinkedInPro from "@/components/LinkedInPro";
+import ImagePro from "@/components/ImagePro";
 import InstagramPro from "@/components/InstagramPro";
 import Footer from "@/components/Footer";
 
@@ -31,6 +32,7 @@ const Index = () => {
           <EmailAgent />
           <LinkedInPro />
           <InstagramPro />
+          <ImagePro />
         </div>
       </main>
       <Footer />

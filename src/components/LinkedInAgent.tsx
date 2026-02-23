@@ -21,7 +21,7 @@ const LinkedInAgent = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => entry.isIntersecting && setIsVisible(true),
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -48,7 +48,7 @@ const LinkedInAgent = () => {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ topic: input }),
-        }
+        },
       );
 
       if (!response.ok) throw new Error("Failed to generate preview");
@@ -99,7 +99,7 @@ const LinkedInAgent = () => {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text: preview.text }),
-        }
+        },
       );
       const data = await res.json();
       setPreview((prev) => ({ ...prev, image: data.image }));
@@ -121,7 +121,7 @@ const LinkedInAgent = () => {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(preview),
-        }
+        },
       );
 
       if (!response.ok) throw new Error("Failed to post on LinkedIn");

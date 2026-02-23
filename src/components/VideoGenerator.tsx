@@ -37,7 +37,8 @@ const VideoGenerator = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5678/webhook/video-generate",
+        // "http://localhost:5678/webhook/video-generate",
+        "http://localhost:5678/webhook-test/video-generate",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

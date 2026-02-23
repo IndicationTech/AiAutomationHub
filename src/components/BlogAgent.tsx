@@ -20,9 +20,9 @@ const BlogAgent = () => {
   const imageInputRef = useRef<HTMLInputElement>(null);
 
   const webhookUrl =
-    // "http://localhost:5678/webhook/0b665646-7d8c-4c17-b118-10a13f700dd4";
-    // "http://localhost:5678/webhook-test/0b665646-7d8c-4c17-b118-10a13f700dd4";
-    "https://brockgaming.app.n8n.cloud/webhook-test/0b665646-7d8c-4c17-b118-10a13f700dd4";
+    "http://localhost:5678/webhook/0b665646-7d8c-4c17-b118-10a13f700dd4";
+  // "http://localhost:5678/webhook-test/0b665646-7d8c-4c17-b118-10a13f700dd4";
+  // "https://brockgaming.app.n8n.cloud/webhook-test/0b665646-7d8c-4c17-b118-10a13f700dd4";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
